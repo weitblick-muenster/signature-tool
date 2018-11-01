@@ -29,3 +29,17 @@ body {
     height: 200px;
     margin-top: 10px;
 }
+.btn-primary {
+  background-color: #FF9900;
+  border-color: #eeeeee;
+}
+
+.nav-pills .nav-link:not(.active) {
+    background-color: #FFFFFF;
+    color: #FF9900;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #FF9900;
+    color: black;
+}

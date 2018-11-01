@@ -33,12 +33,8 @@
                         <h5 class="card-title">
                             <span class="badge badge-pill badge-dark">1</span> Anleitung</h5>
                         <p class="card-text">
-                            Tragt rechts eure persönlichen Daten ein. Ihr könnt (optional) eure LinkedIn- bzw
-                            Xing-Profile einbinden: Ruft dafür euer
-                            eigenes Profil im entsprechenden Netzwerk auf und kopiert die Adresse aus der Adresszeile
-                            in
-                            die Eingabefelder. Anschließend könnt ihr die Signatur in der Vorschau überprüfen und
-                            herunterladen.
+                            Tragt rechts eure persönlichen Daten ein. Ihr könnt (optional) eure Position im
+                            Verein angeben (Vorstand, Gruppenleitung etc.)
                             <br>
                             <br>
                             <i class="far fa-lightbulb text-info"></i> Um die Signatur in euer Mail-Programm
@@ -73,54 +69,17 @@
                                 <label for="name">Name</label>
                                 <input type="input" class="form-control" id="name" placeholder="Max Mustermann" oninput="previewSignature()">
                             </div>
-                            <label for="phone">Mobilnummer</label>
+                            <label for="city">Weitblick Stadt</label>
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="phone-addon">+49 (0)</span>
-                                </div>
-                                <input type="text" id="phone" class="form-control" placeholder="1631234567" oninput="previewSignature()">
+                              <input type="text" id="city" class="form-control" placeholder="Weitblick Münster e.V." oninput="previewSignature()">
                             </div>
                             <div class="form-group">
                                 <label for="email">E-Mail</label>
-                                <input type="email" class="form-control" id="email" oninput="previewSignature()" value="max.mustermann@example.de"
-                                    placeholder="max.mustermann@example.de">
+                                <input type="email" class="form-control" id="email" oninput="previewSignature()" placeholder="max.mustermann@weitblicker.org">
                             </div>
-                            <div class="form-row">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="position1">Position</label>
-                                        <select class="form-control" id="position1" onchange="previewSignature()">
-                                            <option>Ressort</option>
-                                            <option>Ressortleitung</option>
-                                            <option>Themenkreis</option>
-                                            <option>Vorstand</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="form-group">
-                                        <input type="input" class="form-control" id="position2" placeholder="Finanzen"
-                                            oninput="previewSignature()">
-                                    </div>
-                                </div>
-                            </div>
-                            <label for="linkedInd">Soziale Netzwerke</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="phone-addon">
-                                        <i class="fab fa-linkedin"></i>
-                                    </span>
-                                </div>
-                                <input type="text" id="linkedin" class="form-control" placeholder="linkedIn URL"
-                                    oninput="previewSignature()">
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="phone-addon">
-                                        <i class="fab fa-xing-square"></i>
-                                    </span>
-                                </div>
-                                <input type="text" id="xing" class="form-control" placeholder="Xing URL" oninput="previewSignature()">
+                            <div class="form-group">
+                                <label for="position1">Position</label>
+                                <input type="input" class="form-control" id="position1" placeholder="Stadtvorstand" oninput="previewSignature()">
                             </div>
                             <a class='btn btn-primary' onclick='copy()'>Kopieren
                                 <i class="fas fa-copy"></i>

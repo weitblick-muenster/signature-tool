@@ -76,12 +76,34 @@ function previewSignature() {
  * Setzt die Signatur mit den eingegebenen Daten zusammen
  */
 function buildSignature() {
+  var city_arr = ["Bayreuth", "Berlin", "Bochum", "Bonn", "Duisburg-Essen", "Freiburg", "Göttingen", "Hamburg", "Hannover", "Heidelberg", "Kiel", "Köln","Leipzig", "Marburg", "München", "Münster", "Osnabrück", "Bundesverband", "plus", ""]
+  var address_arr = [
+    "c/o Benedikt Rampelt </br>Friedrichstraße 53 | 95444 Bayreuth",
+    "Tegeler Straße 38 | 13353 Berlin",
+    "c/o Lewe </br>Bläulingsweg 5 | 45279 Essen",
+    "Postfach 7169 | 53071 Bonn",
+    "Universität Duisburg-Essen/Institut für Politikwissenschaft/LF Gebäude</br>Forsthausweg 2 | 47057 Duisburg",
+    "Postfach 0602 | 79006 Freiburg im Breisgau",
+    "Niedersächsische Staats- und Universitätsbibliothek Göttingen</br>Platz der Göttinger Sieben 1 | 37073 Göttingen",
+    "c/o Hannah Ruprecht</br>Schlankreye 11 | 20144 Hamburg",
+    "Königsworther Platz 1 | 30167 Hannover",
+    "c/o Tobias Held</br>Franz-Knauff-Straße 1 | 69115 Heidelberg",
+    "AStA Büro CAU Kiel</br>Westring 385 | 24118 Kiel",
+    "z. Hd. Nadja Markowski</br>Dürener Str. 290 | 50935 Köln - Lindenthal",
+    "c/o Jule Hegmann</br>Prager Str. 29 | 04317 Leipzig",
+    "Postfach 2133 | 35009 Marburg",
+    "Kaulbachstraße 25 | 80539 München",
+    "Universitätsstraße 14-16 | 48143 Münster",
+    "Wiebke Spree</br>Bramscher Straße 63 | 49088 Osnabrück",
+    "Scanbox #01445 </br>Ehrenbergstraße 16a | 10245 Berlin",
+    "Bundesverband Weitblick e. V. c/o Weitblick plus e. V.</br>Scanbox #01445</br>Ehrenbergstraße 16a | 10245 Berlin",
+    "Musterstraße 77 | 12345 Weitblickhausen"
+    ]
   let name = document.getElementById("name").value
     ? document.getElementById("name").value
     : "Max Mustermann";
-  let city = document.getElementById("city").value
-    ? document.getElementById("city").value
-    : "Weitblick Münster e.V.";
+  let city = city_arr[document.getElementById("city").value]
+  let address = address_arr[document.getElementById("city").value]
   let email = document.getElementById("email").value
     ? document.getElementById("email").value
     : "max.mustermann@weitblicker.org";
@@ -121,9 +143,9 @@ function buildSignature() {
           ${pos2} ${pos1}
           <br> ${email}
           <br><span style="font-size: 9pt; color: #000000; font-weight: lighter;	margin: 0px;">
-            <br> ${city}
-            <br> Universitätsstraße 14-16 | 48143 Münster
-            <br><a style="text-decoration: none; color: #000000; font-weight: bold;	margin: 0px;" href="http://www.weitblicker.org/Stadt/Münster">www.weitblicker.org/Stadt/Münster</a>
+            <br> Weitblick ${city} e.V.
+            <br> ${address}
+            <br><a style="text-decoration: none; color: #000000; font-weight: bold;	margin: 0px;" href="http://www.weitblicker.org/Stadt/${city}">www.weitblicker.org/Stadt/${city}</a>
           </span>
       </p>
       <div style="font-family: Tahoma, sans-serif; line-height: 110%; font-size: 10pt; margin: 13.333px 0px 13.333px 0px">

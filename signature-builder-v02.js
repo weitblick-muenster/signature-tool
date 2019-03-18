@@ -76,7 +76,7 @@ function previewSignature() {
  * Setzt die Signatur mit den eingegebenen Daten zusammen
  */
 function buildSignature() {
-  var city_arr = ["Bayreuth", "Berlin", "Bochum", "Bonn", "Duisburg-Essen", "Freiburg", "Göttingen", "Hamburg", "Hannover", "Heidelberg", "Kiel", "Köln","Leipzig", "Marburg", "München", "Münster", "Osnabrück", "Bundesverband", "plus", ""]
+  var city_arr = ["Bayreuth", "Berlin", "Bochum", "Bonn", "Duisburg-Essen", "Freiburg", "Göttingen", "Hamburg", "Hannover", "Heidelberg", "Kiel", "Köln","Leipzig", "Marburg", "München", "Münster", "Osnabrück", "Bundesverband", "plus", "Bundesverband"]
   var address_arr = [
     "c/o Benedikt Rampelt </br>Friedrichstraße 53 | 95444 Bayreuth",
     "Tegeler Straße 38 | 13353 Berlin",
@@ -94,16 +94,62 @@ function buildSignature() {
     "Postfach 2133 | 35009 Marburg",
     "Kaulbachstraße 25 | 80539 München",
     "Universitätsstraße 14-16 | 48143 Münster",
-    "Wiebke Spree</br>Bramscher Straße 63 | 49088 Osnabrück",
+    "c/o Wiebke Spree</br>Bramscher Straße 63 | 49088 Osnabrück",
     "Scanbox #01445 </br>Ehrenbergstraße 16a | 10245 Berlin",
     "Bundesverband Weitblick e. V. c/o Weitblick plus e. V.</br>Scanbox #01445</br>Ehrenbergstraße 16a | 10245 Berlin",
     "Musterstraße 77 | 12345 Weitblickhausen"
     ]
+    var facebook_arr = [
+      "WeitblickBayreuth",
+      "weitblick.berlin",
+      "WeitblickBO",
+      "WeitblickBonn",
+      "WeitblickDuisburgEssen",
+      "WeitblickFreiburg",
+      "weitblickgoettingen",
+      "WeitblickHamburg",
+      "weitblickhannover",
+      "WeitblickHeidelberg",
+      "WeitblickKiel",
+      "WeitblickKoeln",
+      "WeitblickLeipzig",
+      "weitblickmarburg",
+      "WeitblickMuenchen",
+      "WeitblickMuenster",
+      "WeitblickOsnabrueck",
+      "weitblick",
+      "weitblick",
+      "weitblick"
+    ]
+    var logo_address_arr = [
+      "wbcd_logo_bayreuth_website.png",
+      "berlin_0.png",
+      "weitblick_bochum_logo.png",
+      "bonn_0.png",
+      "duisburg-essen_0.png",
+      "freiburg_0.png",
+      "goettingen.png",
+      "hamburg_0.png",
+      "hannover_0.png",
+      "heidelberg_0.png",
+      "kiel_0.png",
+      "koeln_0.png",
+      "leipzig_0.png",
+      "marburg_0.png",
+      "muenchen_0.png",
+      "muenster_0.png",
+      "osnabrueck_0.png",
+      "bundesverband.png",
+      "wbcd_logo_standard_plus_web.png",
+      "bundesverband.png"
+    ]
+
   let name = document.getElementById("name").value
     ? document.getElementById("name").value
     : "Max Mustermann";
-  let city = city_arr[document.getElementById("city").value]
-  let address = address_arr[document.getElementById("city").value]
+  let city_number = document.getElementById("city").value
+  let city = city_arr[city_number]
+  let address = address_arr[city_number]
   let email = document.getElementById("email").value
     ? document.getElementById("email").value
     : "max.mustermann@weitblicker.org";
@@ -111,15 +157,17 @@ function buildSignature() {
     ? document.getElementById("position1").value
     : "";
   let pos2 = ""
+  let facebook = facebook_arr[city_number]
+  let logo_src = logo_address_arr[city_number]
 
   if (pos1.length > 0){
     pos2 = "<br>"
   }
   let fb = "";
   if ((isMobile || isSocialLinks)) {
-    fb = `<a style="color: rgb(59, 89, 152);" href="https://www.facebook.com/WeitblickMuenster/">facebook</a>`;
+    fb = `<a style="color: rgb(59, 89, 152);" href="https://www.facebook.com/${facebook}/">facebook</a>`;
   } else {
-    fb = `<a href="https://www.facebook.com/WeitblickMuenster/"><img src="resources/signatur_logo_facebook.png" alt=""></a>`;
+    fb = `<a href="https://www.facebook.com/${facebook}/"><img src="resources/signatur_logo_facebook.png" alt=""></a>`;
   }
   let separator = "";
   if (!isMobile) {
@@ -129,7 +177,7 @@ function buildSignature() {
   let logo = "";
   if (!isMobile) {
     logo =
-      "<br><img style= 'padding: 10px;' src='https://weitblicker.org/sites/default/files/muenster_0.png' alt='YourName'>";
+      `<br><img style= 'padding: 10px;' src='https://weitblicker.org/sites/default/files/${logo_src}' alt='YourName'>`;
   }
 
   let signatur = `<!DOCTYPE html>

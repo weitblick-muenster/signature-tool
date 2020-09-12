@@ -1,6 +1,4 @@
-Weitblick Münster Signaturen Tool
+## Weitblick Münster Signaturen Tool
 Todos:
-- Add weitblick resources
-- Add weitblick Social Links
-- Add weitblick names and adress
+- Add weitblick resources/images
 - add screenshots
